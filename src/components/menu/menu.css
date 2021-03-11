@@ -1,0 +1,219 @@
+.menu-outer {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.45);
+    z-index: 3;
+}
+.menu-inner {
+    border-radius: 0.5rem;
+    width: 88%;
+    max-width: 730px;
+    margin: 5rem auto;
+    left: 0;
+    background: var(--white);
+    position: relative;
+    padding: 2rem 20px;
+}
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-header i {
+    font-size: 1.25rem;
+    color: var(--gray);
+    cursor: pointer;
+}
+.menu-inner p {
+    padding: 2rem 0 2rem 0;
+    line-height: 1.5;
+    color: var(--black);
+}
+.options-container {
+    border: 1px solid var(--light-gray);
+    margin-bottom: 25px;
+    border-radius: 0.5rem;
+}
+.options-container-active {
+    border: 2px solid var(--teal);
+}
+.options-header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 1.25rem;
+}
+.options-header input {
+    transform: scale(2);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.options-header input:checked::after {
+    content: '';
+    height: 7.8px;
+    width: 7.8px;
+    background: var(--teal);
+    border-radius: 100%;
+    display: block;
+    z-index: 5;
+}
+.options-header input:checked::before {
+    content: '';
+    height: 13px;
+    width: 13px;
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 100%;
+    position: absolute;
+    z-index: 4;
+}
+
+.options-header h3 {
+    margin-left: 2rem;
+    font-size: 1.05rem;
+}
+.menu-subheader {
+    color: var(--teal);
+    margin-top: 0.5rem;
+}
+.options-container p {
+    padding: 0 1.25rem 2rem 1.25rem;
+}
+.options-container .menu-stock {
+    padding: 0 1.25rem 2rem 1.25rem;
+    display: flex;
+    align-items: center;
+}
+.options-container .menu-stock span {
+    font-weight: 400;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.grayed-option {
+    border: 1px solid var(--light-gray);
+    margin-bottom: 25px;
+    border-radius: 0.5rem;
+    position: relative;
+}
+.grayed-option  input {
+    transform: scale(2);
+    cursor: not-allowed;
+}
+.grayed-option .options-header h3 {
+    color: rgba(0, 0, 0, 0.582);
+}
+.grayed-option .options-header .menu-subheader {
+    color: rgba(3, 190, 190, 0.37);
+}
+.grayed-option p {
+    padding: 0 1.25rem 2rem 1.25rem;
+    color: rgba(128, 128, 128, 0.349);
+}
+.grayed-option .menu-stock {
+    padding: 0 1.25rem 2rem 1.25rem;
+    color: rgba(0, 0, 0, 0.582);
+    display: flex;
+    align-items: center;
+}
+.grayed-option .menu-stock span {
+    color: rgba(128, 128, 128, 0.349);
+    font-weight: 400;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.pledge-container {
+    border-top: 1px solid var(--light-gray);
+    text-align: center;
+}
+.pledge-container p {
+    padding: 35px 0 20px 0;
+}
+.pledge-amount {
+    border: var(--border2);
+}
+.pledge-inner {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1.5rem;
+}
+.pledge-amount {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--light-gray);
+}
+.pledge-amount i {
+    color: var(--gray);
+}
+.pledge-amount input {
+    width: 50px;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-left: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.pledge-inner button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.15rem;
+    outline: none;
+    cursor: pointer;
+}
+
+
+@media (min-width: 730px) {
+    .options-container {
+        position: relative;
+    }
+    .header_ {
+        display: flex;
+        align-items: center;
+    }
+
+    .header_ .menu-subheader {
+        margin: 0 2rem;
+    }
+    .menu-content {
+        width: 87%;
+        margin: 0 auto;
+    }
+    .grayed-option .menu-stock {
+        font-size: 1.25rem;
+        top: 15%;
+    }
+    .menu-stock {
+        position: absolute;
+        right: 0;
+        top: 12%;
+        font-size: 1.25rem;
+    }
+    .pledge-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .pledge-container p {
+        padding: 0px 1.5rem;
+        align-self: center;
+    }
+    .pledge-inner {
+        padding: 1.5rem 0;
+        width: 270px;
+        justify-content: space-between;
+        margin-right: 1.5rem;
+    }
+}

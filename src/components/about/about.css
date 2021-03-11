@@ -1,0 +1,25 @@
+.about-section {
+    width: 88%;
+    margin: 0 auto;
+    /* border: var(--border); */
+    max-width: 730px;
+    background: var(--white);
+    border-radius: 0.25rem;
+    margin-bottom: 5rem;
+}
+.about-section h2 {
+    padding: 45px 0 0 25px;
+}
+.message {
+    /* border: var(--border2); */
+    padding: 25px 25px 0 25px;
+    color: var(--gray);
+    line-height: 1.5;
+    /* font-weight: 500; */
+}
+.about-top-section {
+    padding-bottom: 40px;
+}
+.rewards-container {
+    padding-bottom: 38px;
+}

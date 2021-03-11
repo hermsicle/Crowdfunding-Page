@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React , {useContext} from 'react'
+import {Switch, Route} from 'react-router-dom'
+import About from './components/about/About';
+import Hero from './components/hero/Hero';
+import Riser from './components/riser/Riser';
+import SectionOne from './components/sectionOne/SectionOne';
+import {Context} from './components/Context'
+import Alert from './components/alert/Alert'
+import SelectReward from './components/selectReward/SelectReward'
 
 function App() {
+
+  const {modalOpen} = useContext(Context)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Hero/>
+      <Riser/>
+      <SectionOne/>
+      <About/>
+
+      {
+        modalOpen &&
+          <Alert/>
+      }
+
+      {/* <SelectReward/> */}
+
+      <Switch>
+        {/* <Route exact path='/' component={Home} /> */}
+      </Switch>
     </div>
   );
 }

@@ -1,0 +1,115 @@
+.riser-outer {
+    position: absolute;
+    top: 225px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.riser {
+    /* border: var(--border); */
+    /* height: 285px; */
+    width: 88%;
+    max-width: 730px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: var(--white);
+    border-radius: 0.25rem;
+
+}
+.riser .logo1 {
+    position: absolute;
+    top: -35px;
+}   
+.riser h2 {
+    font-size: 1.5rem;
+    padding: 2.5rem 2rem 1rem 2rem;
+}
+.riser p {
+    line-height: 1.5;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+.riser-container-inner {
+    /* border: var(--border2); */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 2rem auto;
+    /* height: 70px; */
+}
+.riser-container-inner button {
+    background-color: var(--teal);
+    color: var(--snow);
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 3rem;
+    font-weight: 900;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    height: 60px;
+}
+
+.bookmark {
+    cursor: pointer;
+}
+
+.bookmark-container p {
+    display: none;
+}
+
+.bookmark-container {
+    /* border: 1px solid black; */
+    position: relative;
+    border-radius: 2rem;
+    background: var(--light-gray);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-container-2 {
+    position: relative;
+    border-radius: 2rem;
+    background: var(--light-teal);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+}
+.bm2 {
+    display: block;
+    color: var(--white);
+    border: 1px solid black;
+    padding: 1rem;
+    height: 55px;
+    width: 55px;
+    font-size: 1.15rem;
+    background-color: var(--teal);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.bookmark-container-2 p {
+    display: none;
+}
+
+
+@media (min-width: 730px) {
+    .bookmark-container {
+        display: flex;
+    }
+    .bookmark-container p {
+        display: block;
+        font-weight: 900;
+    }
+    .bookmark-container-2 p {
+        font-weight: 900;
+        display: block;
+    }
+}

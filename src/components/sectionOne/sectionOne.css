@@ -1,0 +1,99 @@
+.section-one {
+    /* border: var(--border); */
+    /* margin-top: 200px; */
+    width: 88%;
+    max-width: 730px;
+    margin: 240px auto 20px auto;
+    background: var(--white);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.one,
+.two,
+.three {
+    /* border: var(--border2); */
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+.one h1,
+.two h1,
+.three h1 {
+    margin: 1rem;
+}
+
+.one p::after,
+.two p:after {
+    content: '';
+    height: 1px;
+    background:  var(--light-gray);
+    /* background: var(--teal); */
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    width: 75px;
+}
+.three p {
+    margin-bottom: 1rem;
+}
+
+.outer {
+    height: 1rem;
+    width: 235px;
+    background: rgb(230, 230, 230);
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.inner {
+    position: absolute;
+    height: 1rem;
+    /* width: 186px; */
+    width: 70%;
+    background: var(--teal);
+    border-radius: 1.5rem;
+}
+
+@media (min-width: 545px) {
+    .section-one {
+        margin-top: 220px;
+    }
+}
+
+@media (min-width: 622px) {
+    .section-one {
+        margin-top: 200px;
+    }
+}
+
+@media (min-width: 730px) {
+    .section-one {
+        margin-top: 190px;
+    }
+}
+
+@media (min-width: 730px) {
+    .section-one {
+        display: grid;
+        grid-template: 150px 50px / 1fr 1fr 1fr;
+        grid-template-areas: 
+            "top top top"
+            "bottom bottom bottom";
+    }
+    .one p::after,
+    .two p:after {
+        transform: rotate(90deg);
+        position: absolute;
+        left: 85%;
+        top: 30%;
+        right: 0;
+    }
+    .outer {
+        grid-area: bottom;
+        /* width: 600px; */
+        width: 90%;
+    }
+
+}
