@@ -23,9 +23,10 @@ export const menuData = [
             You've helped us launch our promotional campaign, 
             and you'll be added to a special Backer member list.
         `,
-        stock: '101',
+        // stock: '101',
         button: 'Select Reward',
         left: 'left',
+        minimumPledgeAmount: 25,
         active: false,
         disabled: false
     },
@@ -38,9 +39,10 @@ export const menuData = [
         thank you. You'll be added to our Backer member list.
         Shipping is included.
         `,
-        stock: '64',
+        // stock: '64',
         button: 'Select Reward',
         left: 'left',
+        minimumPledgeAmount: 75,
         active: false,
         disabled: false
     },
@@ -56,6 +58,7 @@ export const menuData = [
         stock: '0',
         button: 'Out of Stock',
         left: 'left',
+        minimumPledgeAmount: '',
         active: false,
         disabled: true
     }

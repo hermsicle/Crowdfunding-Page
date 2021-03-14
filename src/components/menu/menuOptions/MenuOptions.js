@@ -1,38 +1,45 @@
 import React, {useState, useContext} from 'react'
 import '../menu.css'
-import Alert from '../../alert/Alert'
 import {Context} from '../../Context'
+import {PledgeContext} from '../../PledgeContext'
 
 function MenuOptions(props) {
     const {toggleMenu} = useContext(Context)
     const {toggleModal} = useContext(Context)
 
+    const {handleChangeInput} = useContext(PledgeContext)
+    const {getTotalAmountPledged} = useContext(PledgeContext)
+    const {getTotalBackers} = useContext(PledgeContext)
+    const {userPledgeAmount} = useContext(PledgeContext)
+    const {bambooStandsLeft} = useContext(PledgeContext)
+    const {blackEditionsLeft} = useContext(PledgeContext)
+    const {updateBambooStands} = useContext(PledgeContext)
+    const {updateBlackEditions} = useContext(PledgeContext)
 
-    const [input, setInput] = useState()
-    const [checkInput, setCheckInput] = useState(false)
+    const [pledge, setPledge] = useState({id: props.data.id, checked: false})
+    const [radio, setRadio] = useState(false)
 
-    //Handles the user input select, sets Input state to value
+
     function handleChange(e) {
-        let inputVal = parseInt(e.target.name)
-        setInput(inputVal)
+        const {name, value} = e.target
+        setPledge({id: parseInt(value), checked:true})
     }
 
-    // console.log(props.data.active)
-    // console.log(props.data)
-
-    function checkInputs(e) {
-        console.log(e.target.checked)
-        if(e.target.checked && !checkInput) {
-            setCheckInput(true)
-        } else if (e.target.checked && checkInput) {
-            setCheckInput(false)
+    function unCheckRadio(e) {
+        if (e.target.checked && !radio) {
+            setRadio(true)
+        } else if (e.target.checked && radio) {
+            setRadio(false)
         }
     }
 
+
     //conditionals to check to determine which classes to go for
     const checkMenu = props.data.id === 3 ? 'grayed-option' : 'options-container'
-    const checkActive = checkInput ? 'options-container-active' : 'options-container'
-
+    // const checkActive = checkInput ? 'options-container-active' : 'options-container'
+    // const checkActive = 'options-container'
+    const checkActive = pledge.id === props.data.id && pledge.checked === true && radio
+                        ? 'options-container-active' : 'options-container'
     return (
         <>
         <div 
@@ -42,11 +49,11 @@ function MenuOptions(props) {
             <div className='options-header'>
                 <input 
                     type='radio' 
-                    onClick={checkInputs}
-                    checked={checkInput}
+                    checked={radio}
+                    onClick={unCheckRadio}
                     name={props.data.id}
-                    // name='radio'
                     onChange={handleChange}
+                    value={props.data.id}
                     disabled={props.data.disabled ? true : false}
                     style={{
                         cursor: props.data.disabled ? 'not-allowed' : 'pointer'
@@ -66,12 +73,15 @@ function MenuOptions(props) {
 
             <h3 className='menu-stock'>
                 {props.data.stock} 
+                {props.data.id === 1 ? bambooStandsLeft : ''}
+                {props.data.id === 2 ? blackEditionsLeft : ''}
                 <span>{props.data.left}</span> 
             </h3>
-            
+
             {
-                props.data.id === input && checkInput ?
-                <div className='pledge-container'>
+                props.data.id === pledge.id && pledge.checked === true && radio ? 
+                <div key={props.data.id} 
+                className='pledge-container active'>
                 <p>Enter your pledge</p>
                 <div className='pledge-inner'>
                     <form 
@@ -79,28 +89,68 @@ function MenuOptions(props) {
                     >
                     <i class="fas fa-dollar-sign"></i>
                         <input
-                            type='text'
-                            min='1'
+                            type='number'
+                            name='amount'
+                            min={props.data.minimumPledgeAmount}
+                            placeholder={props.data.minimumPledgeAmount}
+                            onChange={handleChangeInput}
+
                         />
                     </form>
                     <button
+                        disabled={userPledgeAmount === '' ? true : false}
                         onClick={() => {
                             toggleMenu()
                             toggleModal()
+                            getTotalAmountPledged()
+                            getTotalBackers()
+                            updateBambooStands(props.data.id)
+                            updateBlackEditions(props.data.id)
                         }}
                     >
                         Continue
                     </button>
                 </div>
-                </div> 
-                : ''
+            </div>  
+            : ''
             }
 
+            
+            {/* <div key={props.data.id} 
+                className='pledge-container active'>
+                <p>Enter your pledge</p>
+                <div className='pledge-inner'>
+                    <form 
+                        className='pledge-amount'
+                    >
+                    <i class="fas fa-dollar-sign"></i>
+                        <input
+                            type='number'
+                            name='amount'
+                            min={props.data.minimumPledgeAmount}
+                            placeholder={props.data.minimumPledgeAmount}
+                            onChange={handleChangeInput}
+
+                        />
+                    </form>
+                    <button
+                        disabled={userPledgeAmount === '' ? true : false}
+                        onClick={() => {
+                            toggleMenu()
+                            toggleModal()
+                            getTotalAmountPledged()
+                            getTotalBackers()
+                            updateBambooStands(props.data.id)
+                            updateBlackEditions(props.data.id)
+                        }}
+                    >
+                        Continue
+                    </button>
+                </div>
+            </div>   */}
+
+
         </div>
-
-
-
-
         </>
     )
 }

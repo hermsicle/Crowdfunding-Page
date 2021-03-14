@@ -17,7 +17,6 @@ function Alert() {
                 </p>
                 <button 
                     onClick={() => {
-                        console.log('close modal')
                         toggleModal()
                     }}
                 >

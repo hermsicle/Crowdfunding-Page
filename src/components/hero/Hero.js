@@ -6,8 +6,9 @@ function Hero() {
     return (
         <div className='hero-container'>
             <Header/>
-            <div className='hero'>
-            </div>
+                <div className='hero'>
+                    <div className='hero-overlay'></div>
+                </div>
         </div>
 
     )

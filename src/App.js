@@ -25,8 +25,6 @@ function App() {
           <Alert/>
       }
 
-      {/* <SelectReward/> */}
-
       <Switch>
         {/* <Route exact path='/' component={Home} /> */}
       </Switch>

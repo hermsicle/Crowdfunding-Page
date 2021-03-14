@@ -113,3 +113,9 @@
         display: block;
     }
 }
+
+@media (min-width: 800px) {
+    .riser {
+        margin-top: 234px;
+    }
+}

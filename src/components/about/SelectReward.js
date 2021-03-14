@@ -2,15 +2,17 @@ import React, {useContext} from 'react'
 import './selectReward.css'
 
 import {Context} from '../Context'
+import {PledgeContext} from '../PledgeContext'
 
 function SelectReward({data}) {
     const {selectReward} = useContext(Context)
     const {toggleMenu} = useContext(Context)
-
+    const {bambooStandsLeft} = useContext(PledgeContext)
+    const {blackEditionsLeft} = useContext(PledgeContext)
 
 
     function scrollToTop() {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 250)
     }
     
     return (
@@ -28,6 +30,8 @@ function SelectReward({data}) {
             <div className='inventory-container'>
                 <h1>
                     {data.stock}
+                    {data.id === 1 ? bambooStandsLeft : ''}
+                    {data.id === 2 ? blackEditionsLeft : ''}
                     <span>left</span>
                 </h1>
                 <button

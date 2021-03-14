@@ -13,6 +13,7 @@ function ContextProvider(props) {
     const [isPledgeActive, setPledgeActive] = useState(false)
     
     function selectReward(id) {
+        // console.log(id)
         // let menuSliced = menu.slice(1)
         let mapAboutMenu = menu.map(list => {
             if(list.id === id) {
@@ -27,7 +28,6 @@ function ContextProvider(props) {
         setPledgeActive(!isPledgeActive)
     }
 
-    // console.log(aboutMenu)
 
     function toggleMenu() {
         setMenuOpen(!menuOpen)

@@ -12,10 +12,12 @@
     width: 88%;
     max-width: 730px;
     margin: 5rem auto;
+    top: 100px;
     left: 0;
     background: var(--white);
     position: relative;
     padding: 2rem 20px;
+    /* border: var(--border); */
 }
 .menu-header {
     display: flex;
@@ -127,7 +129,6 @@
     margin-left: 0.5rem;
     font-size: 1rem;
 }
-
 .pledge-container {
     border-top: 1px solid var(--light-gray);
     text-align: center;
@@ -156,7 +157,7 @@
 .pledge-amount input {
     width: 50px;
     height: 1.5rem;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     font-weight: 900;
     margin-left: 0.5rem;
     outline: none;
@@ -215,5 +216,11 @@
         width: 270px;
         justify-content: space-between;
         margin-right: 1.5rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .menu-inner {
+        top: 200px;
     }
 }

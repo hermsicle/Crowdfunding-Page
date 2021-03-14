@@ -75,9 +75,10 @@ function MenuOptions2(props) {
                     >
                     <i class="fas fa-dollar-sign"></i>
                         <input
-                            type='number'
+                            // type='number'
+                            type='text'
                             required
-                            min='1'
+                            // min='1'
                         />
                     </form>
                     <button

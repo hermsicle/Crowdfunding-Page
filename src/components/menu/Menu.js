@@ -9,8 +9,8 @@ function Menu(props) {
     const {toggleMenu} = useContext(Context)
     const {aboutMenu} = useContext(Context)
 
-    const mapMenu = menu.map( (item, i) => (
-        <MenuOptions data={item} index={i} check={aboutMenu} />
+    const mapMenu = menu.map( (item) => (
+        <MenuOptions data={item} check={aboutMenu} />
     ))
 
     
