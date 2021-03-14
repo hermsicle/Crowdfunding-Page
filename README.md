@@ -1,6 +1,8 @@
-# Crowdfunding Page
+# Crowdfunding Page 🖥
 
 This app was created with React.js. 
+
+Check out the site here:  👉 https://crowdfundthis.netlify.app/  👈
 
 
 ## App Features
